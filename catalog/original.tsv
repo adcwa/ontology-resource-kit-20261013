@@ -1,0 +1,85 @@
+category	name	url	resource_id
+顶层本体	BFO 2.0 (ISO 21838-2)	https://github.com/BFO-ontology/BFO-2020	bfo
+顶层本体	DOLCE	http://www.loa.istc.cnr.it/dolce/overview.html	dolce
+顶层本体	UFO / OntoUML	https://github.com/OntoUML/OntoUML	ontouml
+顶层本体	SUMO	https://github.com/ontologyportal/sumo	sumo
+顶层本体	GFO	https://github.com/Onto-Med/GFO	gfo
+W3C 跨行业基础设施	OWL 2	https://www.w3.org/TR/owl2-overview/	owl2
+W3C 跨行业基础设施	RDF 1.1	https://www.w3.org/TR/rdf11-concepts/	rdf11
+W3C 跨行业基础设施	SKOS	https://www.w3.org/TR/skos-reference/	skos
+W3C 跨行业基础设施	PROV-O	https://www.w3.org/TR/prov-o/	prov-o
+W3C 跨行业基础设施	DCAT 3	https://www.w3.org/TR/vocab-dcat-3/	dcat3
+W3C 跨行业基础设施	SSN / SOSA	https://www.w3.org/TR/vocab-ssn/	ssn-sosa
+W3C 跨行业基础设施	Schema.org	https://schema.org/docs/schemas.html	schemaorg
+W3C 跨行业基础设施	SPARQL 1.1	https://www.w3.org/TR/sparql11-overview/	sparql11
+制造 / 工业 4.0	IOF 工业本体联盟	https://github.com/iofoundry/ontology	iof
+制造 / 工业 4.0	ISO 10303 (STEP)	https://www.iso.org/standard/84667.html	step
+制造 / 工业 4.0	OntoSTEP (OWL)	https://github.com/usnistgov/OntoSTEP	ontostep
+制造 / 工业 4.0	RAMI 4.0 参考架构	https://www.plattform-i40.de/IP/Redaktion/EN/Downloads/Publikation/rami40-an-introduction.html	rami40
+制造 / 工业 4.0	AAS 资产管理壳 IDTA v3	https://github.com/admin-shell-io/aas-specs	aas
+制造 / 工业 4.0	ETSI SAREF4INMA	https://saref.etsi.org/saref4inma/	saref4inma
+能源 / 电力	IEC CIM (61970/61968) OWL	https://github.com/griddigit-ci/CIM-OWL	cim
+能源 / 电力	IEC CIM 官方页面	https://www.iec.ch/TC57	cim
+能源 / 电力	IEC 61850 概览	https://www.iec.ch/homepage	iec61850
+能源 / 电力	ETSI SAREF4ENER	https://saref.etsi.org/saref4ener/	saref4ener
+能源 / 电力	W3C SSN/SOSA	https://www.w3.org/TR/vocab-ssn/	ssn-sosa
+油气 / 流程工业	ISO 15926	https://www.iso.org/standard/81785.html	iso15926
+油气 / 流程工业	ISO 15926 RDF/OWL 实现	https://github.com/Posccaesar/Life-Cycle-Model	iso15926-impl
+油气 / 流程工业	OSDU 油气数据宇宙	https://osduforum.org	osdu
+油气 / 流程工业	PPDM	https://ppdm.org/ppdm/PPDM/Standards	ppdm
+金融 / 监管	FIBO (GitHub OWL)	https://github.com/edmcouncil/fibo	fibo
+金融 / 监管	FIBO 在线浏览器	https://spec.edmcouncil.org/fibo/	fibo
+金融 / 监管	OMG Commons Ontology Library v1.2	https://www.omg.org/spec/Commons/1.2	commons
+金融 / 监管	OMG Commons v1.3 beta	https://www.omg.org/spec/Commons	commons
+金融 / 监管	ACTUS 金融合约标准	https://www.actusfrf.org	actus
+医疗 / 生命科学	SNOMED CT 浏览器	https://browser.ihtsdotools.org	snomedct
+医疗 / 生命科学	SNOMED CT 下载	https://www.snomed.org/snomed-ct/get-snomed	snomedct
+医疗 / 生命科学	HL7 FHIR	https://hl7.org/fhir/	fhir
+医疗 / 生命科学	HL7 FHIR RDF	https://hl7.org/fhir/rdf.html	fhir-rdf
+医疗 / 生命科学	OBO Foundry	https://obofoundry.org	obo
+医疗 / 生命科学	Gene Ontology (GO)	https://geneontology.org	go
+医疗 / 生命科学	ChEBI	https://www.ebi.ac.uk/chebi/	chebi
+医疗 / 生命科学	UBERON	https://github.com/obophenotype/uberon	uberon
+医疗 / 生命科学	LOINC	https://loinc.org/downloads/	loinc
+医疗 / 生命科学	RxNorm	https://www.nlm.nih.gov/research/umls/rxnorm/docs/rxnormfiles.html	rxnorm
+医疗 / 生命科学	ICD-11	https://icd.who.int/browse/2025-01/mms/en	icd11
+医疗 / 生命科学	MeSH	https://www.nlm.nih.gov/mesh/meshhome.html	mesh
+建筑 / BIM	IFC (buildingSMART)	https://technical.buildingsmart.org/standards/ifc/ifc-schema-specifications/	ifc
+建筑 / BIM	ifcOWL	https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL/	ifcowl
+建筑 / BIM	BOT 建筑拓扑本体	https://w3id.org/bot	bot
+建筑 / BIM	BOT GitHub	https://github.com/w3c-lbd-cg/bot	bot
+建筑 / BIM	CityGML 3.0	https://www.ogc.org/standard/citygml/	citygml
+建筑 / BIM	ISO 23387 (BIM 数据模板)	https://www.iso.org/standard/75486.html	iso23387
+供应链 / 零售	GS1 Web Vocabulary	https://www.gs1.org/voc/	gs1voc
+供应链 / 零售	GS1 CBV (ISO/IEC 19988:2024)	https://ref.gs1.org/standards/cbv/	cbv
+供应链 / 零售	EPCIS 2.0	https://ref.gs1.org/standards/epcis/	epcis
+供应链 / 零售	GoodRelations	http://www.heppnetz.de/projects/goodrelations/	goodrelations
+供应链 / 零售	UN/CEFACT	https://unece.org/trade/uncefact	uncefact
+智慧城市 / IoT	ETSI SAREF 全系列	https://saref.etsi.org	saref
+智慧城市 / IoT	SAREF4CITY	https://saref.etsi.org/saref4city/	saref4city
+智慧城市 / IoT	SAREF4BLDG	https://saref.etsi.org/saref4bldg/	saref4bldg
+智慧城市 / IoT	SAREF4WATR	https://saref.etsi.org/saref4watr/	saref4watr
+智慧城市 / IoT	oneM2M 基础本体	https://www.onem2m.org/technical/published-specifications	onem2m
+智慧城市 / IoT	SMOF	https://github.com/wddabc/SMOF	smof
+数字孪生	ISO/IEC 30173:2023	https://www.iso.org/standard/81442.html	iso30173
+数字孪生	AAS 规范 (IDTA)	https://industrialdigitaltwin.org/content-hub/aasspecifications	aas
+数字孪生	AAS GitHub	https://github.com/admin-shell-io/aas-specs	aas
+数字孪生	DTDL (微软)	https://github.com/Azure/opendigitaltwins-dtdl	dtdl
+数字孪生	W3C WoT Thing Description	https://www.w3.org/TR/wot-thing-description/	wot-td
+数字孪生	ISO 23726 (IDO, 制定中)	https://www.iso.org/standard/84706.html	ido
+法律 / 合规	LKIF (GitHub)	https://github.com/RinkeHoekstra/lkif-core	lkif
+法律 / 合规	OASIS LegalRuleML	https://docs.oasis-open.org/legalruleml/legalruleml-core-spec/v1.0/	legalruleml
+法律 / 合规	Akoma Ntoso	http://www.akomantoso.org	akoma
+法律 / 合规	ELI (欧盟法律链接)	https://eur-lex.europa.eu/eli-register/about.html	eli
+法律 / 合规	W3C ODRL	https://www.w3.org/TR/odrl-model/	odrl
+农业 / 食品	AGROVOC	https://agrovoc.fao.org/browse/agrovoc/en/	agrovoc
+农业 / 食品	AGROVOC SPARQL	https://agrovoc.fao.org/sparql	agrovoc
+农业 / 食品	ETSI SAREF4AGRI	https://saref.etsi.org/saref4agri/	saref4agri
+农业 / 食品	FOODON	https://github.com/FoodOntology/foodon	foodon
+农业 / 食品	AgroOntology (OBO)	https://obofoundry.org/ontology/agro.html	agro
+交通 / 物流	DATEX II	https://www.datex2.eu/datex2/downloads	datex2
+交通 / 物流	SIRI	https://www.transmodel-cen.eu/downloads/	siri
+交通 / 物流	Transmodel / NeTEx	https://www.transmodel-cen.eu	transmodel-netex
+交通 / 物流	OTM 开放交通模型	https://otm5.opentripmodel.org	otm
+交通 / 物流	GTFS	https://gtfs.org/documentation/schedule/reference/	gtfs
+交通 / 物流	GTFS-RDF	https://github.com/OpenTransport/linked-gtfs	gtfs-rdf

@@ -1,0 +1,12 @@
+{
+  "source_url": "https://www.w3.org/TR/wot-thing-description/",
+  "resolved_url": "https://www.w3.org/TR/wot-thing-description/",
+  "discovered_at": "2026-10-13T03:08:55+00:00",
+  "matching_links": [
+    "http://www.etsi.org/deliver/etsi_ts/103200_103299/103264/02.01.01_60/ts_103264v020101p.pdf"
+  ],
+  "selected_links": [
+    "http://www.etsi.org/deliver/etsi_ts/103200_103299/103264/02.01.01_60/ts_103264v020101p.pdf"
+  ],
+  "omitted_due_to_limit": 0
+}

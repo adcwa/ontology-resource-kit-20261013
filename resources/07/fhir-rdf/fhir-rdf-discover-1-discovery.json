@@ -1,0 +1,14 @@
+{
+  "source_url": "https://hl7.org/fhir/rdf.html",
+  "resolved_url": "https://hl7.org/fhir/rdf.html",
+  "discovered_at": "2026-10-13T03:08:06+00:00",
+  "matching_links": [
+    "https://hl7.org/fhir/fhir.ttl",
+    "https://hl7.org/fhir/rim.ttl"
+  ],
+  "selected_links": [
+    "https://hl7.org/fhir/fhir.ttl",
+    "https://hl7.org/fhir/rim.ttl"
+  ],
+  "omitted_due_to_limit": 0
+}

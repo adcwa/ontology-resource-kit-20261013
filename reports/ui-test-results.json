@@ -1,0 +1,24 @@
+{
+  "type": "offline_DOM_smoke_test",
+  "mode": "HTML in-memory rendering with local status.js inlined; not a file:// launch or live download test",
+  "checks_passed": 16,
+  "checks": [
+    "all 75 cards rendered",
+    "delivery notice explicitly states no originals",
+    "zero downloaded count",
+    "search matches 2 ISO15926 resources",
+    "manufacturing category has 6 resources",
+    "all 6 visible resources selectable",
+    "export contains 6 selected resources",
+    "export includes tasks",
+    "clear selection",
+    "resource details modal opens",
+    "84 original rows",
+    "15 audit items",
+    "3 unverified resources",
+    "help modal opens",
+    "mobile has no document horizontal overflow",
+    "no JavaScript errors"
+  ],
+  "javascript_errors": []
+}

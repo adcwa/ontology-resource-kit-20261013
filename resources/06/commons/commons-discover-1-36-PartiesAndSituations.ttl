@@ -1,0 +1,503 @@
+# baseURI: https://www.omg.org/spec/Commons/PartiesAndSituations/
+# imports: https://www.omg.org/spec/Commons/AnnotationVocabulary/
+# imports: https://www.omg.org/spec/Commons/Collections/
+# imports: https://www.omg.org/spec/Commons/ContextualDesignators/
+# imports: https://www.omg.org/spec/Commons/DatesAndTimes/
+# imports: https://www.omg.org/spec/Commons/Designators/
+# imports: https://www.omg.org/spec/Commons/RolesAndCompositions/
+
+@base <https://www.omg.org/spec/Commons/PartiesAndSituations/> .
+@prefix cmns-av: <https://www.omg.org/spec/Commons/AnnotationVocabulary/> .
+@prefix cmns-col: <https://www.omg.org/spec/Commons/Collections/> .
+@prefix cmns-cxtdsg: <https://www.omg.org/spec/Commons/ContextualDesignators/> .
+@prefix cmns-dsg: <https://www.omg.org/spec/Commons/Designators/> .
+@prefix cmns-dt: <https://www.omg.org/spec/Commons/DatesAndTimes/> .
+@prefix cmns-pts: <https://www.omg.org/spec/Commons/PartiesAndSituations/> .
+@prefix cmns-rlcmp: <https://www.omg.org/spec/Commons/RolesAndCompositions/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://www.omg.org/spec/Commons/PartiesAndSituations/>
+	a owl:Ontology ;
+	rdfs:label "Commons Parties and Situations Ontology" ;
+	dct:abstract "This ontology defines the high-level concepts of parties and the roles they play in various situations." ;
+	dct:contributor
+		"Dean Allemang, Working Ontologist" ,
+		"Elisa Kendall, Thematix Partners LLC"
+		;
+	dct:license """Copyright (c) 2020-2025 EDM Council, Inc.
+		Copyright (c) 2020-2025 Thematix Partners LLC
+		Copyright (c) 2020-2025 Working Ontologist LLC
+		Copyright (c) 2022-2025 Object Management Group, Inc.
+		Copyright (c) 2022-2025 Pistoia Alliance, Inc.
+		
+		Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+		
+		See https://opensource.org/licenses/MIT.""" ;
+	owl:imports
+		<https://www.omg.org/spec/Commons/AnnotationVocabulary/> ,
+		<https://www.omg.org/spec/Commons/Collections/> ,
+		<https://www.omg.org/spec/Commons/ContextualDesignators/> ,
+		<https://www.omg.org/spec/Commons/DatesAndTimes/> ,
+		<https://www.omg.org/spec/Commons/Designators/> ,
+		<https://www.omg.org/spec/Commons/RolesAndCompositions/>
+		;
+	owl:versionIRI <https://www.omg.org/spec/Commons/20250801/PartiesAndSituations/> ;
+	skos:changeNote "The https://www.omg.org/spec/Commons/20230801/PartiesAndSituations.rdf version of the ontology was modified to add missing inverses needed to integrate the authorization pattern (COMMONS13-38)." ;
+	skos:note "This ontology was originally designed for use in the Financial Industry Business Ontology (FIBO) for representing complex relationships between parties, such as employment, ownership and control. It has since been extended based on usage in other projects, such as the Pistoia Alliance Identification of Medicinal Products (IDMP) ontology project." ;
+	cmns-av:copyright
+		"Copyright (c) 2020-2025 EDM Council, Inc." ,
+		"Copyright (c) 2020-2025 Thematix Partners LLC" ,
+		"Copyright (c) 2020-2025 Working Ontologist LLC" ,
+		"Copyright (c) 2022-2025 Object Management Group, Inc." ,
+		"Copyright (c) 2022-2025 Pistoia Alliance, Inc."
+		;
+	cmns-av:usageNote "Note that inference with respect to property chains, which this ontology makes extensive use of, requires a knowledge graph solution that understands these chains, or requires running a reasoner outside of the graph database and asserting the inferences in order to make use of them." ;
+	.
+
+cmns-pts:Actor
+	a owl:Class ;
+	rdfs:subClassOf cmns-pts:PartyRole ;
+	rdfs:label "actor" ;
+	skos:definition "primary performer in a relationship between parties, i.e., the party that does something, causes something to happen, or otherwise plays an agentive role in the relationship" ;
+	skos:example "Examples include owner, controlling party, beneficiary, guarantor, partner in a partnership, shareholder, etc." ;
+	cmns-av:adaptedFrom
+		"ISO 14813-1:2015(en), Intelligent transport systems - Reference model architecture(s) for the ITS sector - Part 1: ITS service domains, service groups and services, clause 3.1" ,
+		"ISO 23234:2021(en), Buildings and civil engineering works - Security - Planning of security measures in the built environment, clause 3.4" ,
+		"ISO/TR 21965:2019(en), Information and documentation - Records management in enterprise architecture, clause 3.2.1"
+		;
+	cmns-av:explanatoryNote "The concept of actor here is in a more linguistic sense, from core semantic theories reflecting actor/undergoer/null roles of an argument in an expression." ;
+	.
+
+cmns-pts:Agent
+	a owl:Class ;
+	rdfs:subClassOf [
+		a owl:Restriction ;
+		owl:onProperty cmns-dsg:hasName ;
+		owl:onClass cmns-cxtdsg:ContextualName ;
+		owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+	] ;
+	rdfs:label "agent" ;
+	rdfs:seeAlso
+		"http://www.jamesodell.com/WhatIsAnAgent.pdf"^^xsd:anyURI ,
+		"http://www.jamesodell.com/WhyShouldWeCareAboutAgents.pdf"^^xsd:anyURI
+		;
+	owl:disjointWith cmns-rlcmp:Role ;
+	skos:definition "something autonomous that can adapt to and interact with its environment" ;
+	skos:note
+		"Agents can be human beings, organizations, software agents, robots and living things other than plants. They are defined as having the following three important properties: autonomy, interactive behavior, and adaptability. (1) Autonomy - an agent is capable of acting without direct external intervention. This includes software or other agents that have some degree of control over their internal state and can act based on their own experiences. They can also possess their own set of internal responsibilities and capabilities that enable them to act without any external choreography. This definition excludes agents that act on on behalf of (or as a proxy for) some person or thing (see AgentRole). (2) Interactive behavior - they are capable of exchanging communicating with other things in their environment. This includes, in the case of software agents, messages that can support requests for services and other kinds of resources, as well as event detection and notification. They can be synchronous or asynchronous in nature. The interaction can also be conversational in nature, such as negotiating contracts, marketplace-style bidding, or simply making a query. (3) Adaptability - an agent is capable of responding to other agents and/or its environment. Agents can react to communications and events and then respond appropriately. Software agents can be designed to make difficult decisions and even modify their behavior based on their experiences. In other words, they can learn and evolve." ,
+		"Note that this does not necessarily imply that an agent is free to act as it sees fit, without constraint. Rather, an agent in the sense meant here is something which may or may not be subject to controls and constraints but is self-actualizing in its behavior in response to any such constraints."
+		;
+	cmns-av:directSource "http://www.omg.org/techprocess/meetings/schedule/AMP.html"^^xsd:anyURI ;
+	.
+
+cmns-pts:AgentRole
+	a owl:Class ;
+	rdfs:subClassOf
+		cmns-rlcmp:Role ,
+		[
+			a owl:Restriction ;
+			owl:onProperty cmns-rlcmp:isPlayedBy ;
+			owl:onClass cmns-pts:Agent ;
+			owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+		]
+		;
+	rdfs:label "agent role" ;
+	skos:definition "role played by any agent" ;
+	.
+
+cmns-pts:Party
+	a owl:Class ;
+	rdfs:subClassOf cmns-pts:Agent ;
+	rdfs:label "party" ;
+	skos:definition "person or organization" ;
+	.
+
+cmns-pts:PartyRole
+	a owl:Class ;
+	rdfs:subClassOf
+		cmns-pts:AgentRole ,
+		[
+			a owl:Restriction ;
+			owl:onProperty cmns-cxtdsg:hasApplicablePeriod ;
+			owl:onClass cmns-dt:DatePeriod ;
+			owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty cmns-rlcmp:isPlayedBy ;
+			owl:onClass cmns-pts:Party ;
+			owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+		]
+		;
+	rdfs:label "party role" ;
+	skos:definition "role played by an organization or individual that may be time bound" ;
+	skos:example "Examples include organization member, employee, issuer, owner, partner in a partnership, shareholder, and so forth." ;
+	skos:note "Note that there may be cases where the identity of the party playing the role is not known, as well as cases where in some situation, such as ownership, there may be more than one party playing the role of owner." ;
+	skos:scopeNote "The concept of a party role is used in contexts in which one would call someone a 'party to something', such as party to a contract or to a transaction, a supplier, buyer, customer, student, employee, and so forth. More specific roles such as those that are performed in the context of some activity or process are actors in that situation." ;
+	cmns-av:adaptedFrom
+		"ISO 14813-1:2015(en), Intelligent transport systems - Reference model architecture(s) for the ITS sector - Part 1: ITS service domains, service groups and services, clause 3.1" ,
+		"ISO 23234:2021(en), Buildings and civil engineering works - Security - Planning of security measures in the built environment, clause 3.4"
+		;
+	.
+
+cmns-pts:Situation
+	a owl:Class ;
+	rdfs:subClassOf
+		[
+			a owl:Restriction ;
+			owl:onProperty cmns-pts:holdsDuring ;
+			owl:onClass cmns-dt:DatePeriod ;
+			owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty cmns-pts:hasObjectRole ;
+			owl:onClass cmns-rlcmp:Role ;
+			owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty cmns-pts:hasSubjectRole ;
+			owl:someValuesFrom cmns-rlcmp:Role ;
+		]
+		;
+	rdfs:label "situation" ;
+	skos:definition "setting, state of being, or relationship that is relatively stable for some period of time" ;
+	skos:example "Examples include ownership, control, possession, affiliation, beneficial ownership, employment, and other similar situations." ;
+	skos:note "From a usage perspective, situations are essentially reified relations, sometimes called mediating relationships." ;
+	.
+
+cmns-pts:SoftwareAgent
+	a owl:Class ;
+	rdfs:subClassOf cmns-pts:Agent ;
+	rdfs:label "software agent" ;
+	dct:source "ISO/IEC TR 29119-11:2020(en), Software and systems engineering - Software testing - Part 11: Guidelines on the testing of AI-based systems, clause 3.1.73" ;
+	owl:disjointWith cmns-pts:Party ;
+	skos:definition "digital entity that perceives its environment and takes actions that maximize its chance of successfully achieving its goals" ;
+	.
+
+cmns-pts:Undergoer
+	a owl:Class ;
+	rdfs:subClassOf cmns-rlcmp:Role ;
+	rdfs:label "undergoer" ;
+	skos:definition "something that plays the role of the object or recipient in a situation, i.e., the thing (or party) that the situation impacts, affects, or that otherwise plays a passive recipient / patient or thematic role" ;
+	skos:example "Examples include something that is owned or controlled." ;
+	.
+
+cmns-pts:actsIn
+	a owl:ObjectProperty ;
+	rdfs:subPropertyOf cmns-pts:isSubjectRoleIn ;
+	rdfs:label "acts in" ;
+	rdfs:domain cmns-pts:Actor ;
+	rdfs:range cmns-pts:Situation ;
+	owl:inverseOf cmns-pts:hasActor ;
+	skos:definition "indicates a situation in which the actor plays a primary role" ;
+	.
+
+cmns-pts:actsOn
+	a owl:ObjectProperty ;
+	rdfs:label "acts on" ;
+	owl:inverseOf cmns-pts:isAffectedBy ;
+	owl:propertyChainAxiom (
+		cmns-pts:actsIn
+		cmns-pts:hasUndergoer
+	) ;
+	skos:definition "relates an actor in a given situation to the undergoer that they affect under the circumstances" ;
+	.
+
+cmns-pts:directlyAffects
+	a owl:ObjectProperty ;
+	rdfs:label "directly affects" ;
+	owl:inverseOf cmns-pts:experiencesWith ;
+	owl:propertyChainAxiom (
+		cmns-pts:actsIn
+		cmns-pts:hasUndergoer
+		cmns-rlcmp:isPlayedBy
+	) ;
+	skos:definition "relates an actor in a given situation to the thing (or party) that they impact under the circumstances" ;
+	.
+
+cmns-pts:experiences
+	a owl:ObjectProperty ;
+	rdfs:label "experiences" ;
+	owl:propertyChainAxiom (
+		cmns-rlcmp:playsRole
+		cmns-pts:undergoes
+	) ;
+	skos:definition "relates something to a situation that affects them in some way" ;
+	.
+
+cmns-pts:experiencesDirectly
+	a owl:ObjectProperty ;
+	rdfs:label "experiences directly" ;
+	owl:propertyChainAxiom (
+		cmns-rlcmp:playsRole
+		cmns-pts:undergoes
+		cmns-pts:hasActor
+		cmns-rlcmp:isPlayedBy
+	) ;
+	skos:definition "relates something directly to a party that drives a situation involving it" ;
+	.
+
+cmns-pts:experiencesWith
+	a owl:ObjectProperty ;
+	rdfs:label "experiences with" ;
+	owl:propertyChainAxiom (
+		cmns-rlcmp:playsRole
+		cmns-pts:undergoes
+		cmns-pts:hasActor
+	) ;
+	skos:definition "relates something to an actor that drives a situation involving it" ;
+	.
+
+cmns-pts:hasActiveParty
+	a owl:ObjectProperty ;
+	rdfs:label "has active party" ;
+	owl:inverseOf cmns-pts:playsActivePartyIn ;
+	owl:propertyChainAxiom (
+		cmns-pts:hasActor
+		cmns-rlcmp:isPlayedBy
+	) ;
+	skos:definition "relates a situation to the person or organization acting in a primary (agentive) role" ;
+	.
+
+cmns-pts:hasActiveRole
+	a owl:ObjectProperty ;
+	rdfs:label "has active role" ;
+	owl:inverseOf cmns-pts:playsActiveRoleIn ;
+	owl:propertyChainAxiom (
+		cmns-pts:hasSubjectRole
+		cmns-rlcmp:isPlayedBy
+	) ;
+	skos:definition "relates a situation to something that is acting in a primary (agentive) role" ;
+	.
+
+cmns-pts:hasActor
+	a owl:ObjectProperty ;
+	rdfs:subPropertyOf
+		cmns-pts:hasPartyRole ,
+		cmns-pts:hasSubjectRole
+		;
+	rdfs:label "has actor" ;
+	rdfs:domain cmns-pts:Situation ;
+	rdfs:range cmns-pts:Actor ;
+	skos:definition "identifies the primary party acting in a specific role with respect to a given situation" ;
+	.
+
+cmns-pts:hasObjectRole
+	a owl:ObjectProperty ;
+	rdfs:subPropertyOf cmns-rlcmp:hasRole ;
+	rdfs:label "has object role" ;
+	rdfs:domain [
+		a owl:Class ;
+		owl:unionOf (
+			cmns-rlcmp:Composition
+			cmns-pts:Situation
+		) ;
+	] ;
+	rdfs:range cmns-rlcmp:Role ;
+	skos:definition "identifies a person or thing that is affected by, or is a secondary argument in a specific role with respect to a given relation or situation" ;
+	.
+
+cmns-pts:hasParty
+	a owl:ObjectProperty ;
+	rdfs:label "has party" ;
+	rdfs:range cmns-pts:Party ;
+	skos:definition "identifies a party associated with an agreement, contract, policy, regulation, situation, or other arrangement" ;
+	.
+
+cmns-pts:hasPartyRole
+	a owl:ObjectProperty ;
+	rdfs:subPropertyOf cmns-rlcmp:hasRole ;
+	rdfs:label "has party role" ;
+	rdfs:range cmns-pts:PartyRole ;
+	skos:definition "identifies a specific role played by some person or organization as related to a situation, agreement, contract, policy, regulation, activity or other relationship" ;
+	.
+
+cmns-pts:hasRelatedPartyRole
+	a owl:ObjectProperty ;
+	rdfs:subPropertyOf cmns-rlcmp:hasRole ;
+	rdfs:label "has related party role" ;
+	rdfs:domain cmns-pts:PartyRole ;
+	rdfs:range cmns-pts:PartyRole ;
+	skos:definition "relates a party acting in a specific role directly to another party acting in the same or another role" ;
+	cmns-av:usageNote "This property is intended as an abstract property, whose subproperties may or may not be symmetric, but could be inverses of one another." ;
+	.
+
+cmns-pts:hasSubjectRole
+	a owl:ObjectProperty ;
+	rdfs:subPropertyOf cmns-rlcmp:hasRole ;
+	rdfs:label "has subject role" ;
+	rdfs:domain cmns-pts:Situation ;
+	rdfs:range cmns-rlcmp:Role ;
+	skos:definition "identifies the person or thing that is being discussed, described, dealt with, or is the main topic in a specific role with respect to a given situation" ;
+	.
+
+cmns-pts:hasUndergoer
+	a owl:ObjectProperty ;
+	rdfs:subPropertyOf cmns-pts:hasObjectRole ;
+	rdfs:label "has undergoer" ;
+	rdfs:domain cmns-pts:Situation ;
+	rdfs:range cmns-pts:Undergoer ;
+	skos:definition "identifies an experiencer / passive or other object role in a given situation" ;
+	.
+
+cmns-pts:holdsDuring
+	a owl:ObjectProperty ;
+	rdfs:subPropertyOf cmns-cxtdsg:hasApplicablePeriod ;
+	rdfs:label "holds during" ;
+	rdfs:range cmns-dt:DatePeriod ;
+	skos:definition "indicates a date period during which something is true" ;
+	.
+
+cmns-pts:isAPartyTo
+	a owl:ObjectProperty ;
+	rdfs:label "is a party to" ;
+	rdfs:domain cmns-pts:Party ;
+	owl:inverseOf cmns-pts:hasParty ;
+	skos:definition "identifies an agreement, contract, policy, regulation, situation, or other arrangement that a party is associated with" ;
+	.
+
+cmns-pts:isAffectedBy
+	a owl:ObjectProperty ;
+	rdfs:label "is affected by" ;
+	owl:propertyChainAxiom (
+		cmns-pts:undergoes
+		cmns-pts:hasActor
+	) ;
+	skos:definition "relates an undergoer in a given situation to the actor that has an impact on them under the circumstances" ;
+	.
+
+cmns-pts:isDirectlyAffectedBy
+	a owl:ObjectProperty ;
+	rdfs:label "is directly affected by" ;
+	owl:propertyChainAxiom (
+		cmns-pts:undergoes
+		cmns-pts:hasActor
+		cmns-rlcmp:isPlayedBy
+	) ;
+	skos:definition "relates an undergoer in a given situation to the person or organization that has an impact on them under the circumstances" ;
+	.
+
+cmns-pts:isExperiencedBy
+	a owl:ObjectProperty ;
+	rdfs:label "is experienced by" ;
+	owl:inverseOf cmns-pts:experiences ;
+	owl:propertyChainAxiom (
+		cmns-pts:hasUndergoer
+		cmns-rlcmp:isPlayedBy
+	) ;
+	skos:definition "relates a situation to something that is directly involved in or affected by it" ;
+	.
+
+cmns-pts:isObjectRoleIn
+	a owl:ObjectProperty ;
+	rdfs:subPropertyOf cmns-rlcmp:isRoleIn ;
+	rdfs:label "is object role in" ;
+	rdfs:domain cmns-rlcmp:Role ;
+	rdfs:range [
+		a owl:Class ;
+		owl:unionOf (
+			cmns-rlcmp:Composition
+			cmns-pts:Situation
+		) ;
+	] ;
+	owl:inverseOf cmns-pts:hasObjectRole ;
+	skos:definition "indicates a situation in which the role is secondary, such as an experiencer or passive participant" ;
+	.
+
+cmns-pts:isRealizedIn
+	a owl:ObjectProperty ;
+	rdfs:label "is realized in" ;
+	owl:inverseOf cmns-pts:realizes ;
+	owl:propertyChainAxiom (
+		cmns-pts:hasObjectRole
+		cmns-rlcmp:isPlayedBy
+	) ;
+	skos:definition "relates a situation or constituency to something that is affected by, or is a secondary argument to in a specific role with respect to a given relation or situation" ;
+	.
+
+cmns-pts:isSubjectRoleIn
+	a owl:ObjectProperty ;
+	rdfs:subPropertyOf cmns-rlcmp:isRoleIn ;
+	rdfs:label "is subject role in" ;
+	rdfs:domain cmns-rlcmp:Role ;
+	rdfs:range cmns-pts:Situation ;
+	owl:inverseOf cmns-pts:hasSubjectRole ;
+	skos:definition "indicates a situation in which the role is the primary topic" ;
+	.
+
+cmns-pts:playsActivePartyIn
+	a owl:ObjectProperty ;
+	rdfs:label "plays active party in" ;
+	owl:propertyChainAxiom (
+		cmns-rlcmp:playsRole
+		cmns-pts:actsIn
+	) ;
+	skos:definition "relates a person or organization to a situation that they are directly involved in" ;
+	.
+
+cmns-pts:playsActiveRoleIn
+	a owl:ObjectProperty ;
+	rdfs:label "plays active role in" ;
+	owl:propertyChainAxiom (
+		cmns-rlcmp:playsRole
+		cmns-pts:isSubjectRoleIn
+	) ;
+	skos:definition "relates something to a situation that it is directly involved in" ;
+	.
+
+cmns-pts:playsActiveRoleThatAffects
+	a owl:ObjectProperty ;
+	rdfs:label "plays active role that affects" ;
+	owl:inverseOf cmns-pts:isDirectlyAffectedBy ;
+	owl:propertyChainAxiom (
+		cmns-rlcmp:playsRole
+		cmns-pts:actsIn
+		cmns-pts:hasUndergoer
+	) ;
+	skos:definition "relates a person or organization to an undergoer they have an impact on under the circumstances" ;
+	.
+
+cmns-pts:playsActiveRoleThatDirectlyAffects
+	a owl:ObjectProperty ;
+	rdfs:label "plays active role that directly affects" ;
+	owl:inverseOf cmns-pts:experiencesDirectly ;
+	owl:propertyChainAxiom (
+		cmns-rlcmp:playsRole
+		cmns-pts:actsIn
+		cmns-pts:hasUndergoer
+		cmns-rlcmp:isPlayedBy
+	) ;
+	skos:definition "relates a person or organization to something they have a direct impact on under the circumstances" ;
+	.
+
+cmns-pts:realizes
+	a owl:ObjectProperty ;
+	rdfs:label "realizes" ;
+	owl:propertyChainAxiom (
+		cmns-rlcmp:playsRole
+		cmns-pts:isObjectRoleIn
+	) ;
+	skos:definition "relates something to a situation or constituency in which the role they play is secondary, such as an experiencer or passive participant" ;
+	.
+
+cmns-pts:undergoes
+	a owl:ObjectProperty ;
+	rdfs:subPropertyOf cmns-pts:isObjectRoleIn ;
+	rdfs:label "undergoes" ;
+	rdfs:domain cmns-pts:Undergoer ;
+	rdfs:range cmns-pts:Situation ;
+	owl:inverseOf cmns-pts:hasUndergoer ;
+	skos:definition "indicates a situation that the undergoer experiences" ;
+	.
+

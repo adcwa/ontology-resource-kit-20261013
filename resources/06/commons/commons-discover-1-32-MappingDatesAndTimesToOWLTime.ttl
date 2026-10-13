@@ -1,0 +1,96 @@
+# baseURI: https://www.omg.org/spec/Commons/MappingDatesAndTimesToOWLTime/
+# imports: http://www.w3.org/2006/time
+# imports: https://www.omg.org/spec/Commons/AnnotationVocabulary/
+# imports: https://www.omg.org/spec/Commons/DatesAndTimes/
+
+@base <https://www.omg.org/spec/Commons/MappingDatesAndTimesToOWLTime/> .
+@prefix cmns-av: <https://www.omg.org/spec/Commons/AnnotationVocabulary/> .
+@prefix cmns-dt: <https://www.omg.org/spec/Commons/DatesAndTimes/> .
+@prefix cmns-mdt: <https://www.omg.org/spec/Commons/MappingDatesAndTimesToOWLTime/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://www.omg.org/spec/Commons/MappingDatesAndTimesToOWLTime/>
+	a owl:Ontology ;
+	rdfs:label "Commons Mapping Dates and Times to OWL Time Ontology" ;
+	dct:abstract "This ontology maps the Commons Dates and Times ontology to the widely used W3C Time Ontology in OWL recommendation, available at https://www.w3.org/TR/owl-time/. Note that users of this mapping need to be aware of the usage of datatypes that are not allowed in RDFS or OWL in the W3C Time ontology. Usage of this mapping enables use of the Allen intervals defined in the W3C ontology, however, which are useful for a number of applications." ;
+	dct:contributor "Elisa Kendall, Thematix Partners LLC" ;
+	dct:license "http://opensource.org/licenses/MIT"^^xsd:anyURI ;
+	owl:imports
+		<http://www.w3.org/2006/time> ,
+		<https://www.omg.org/spec/Commons/AnnotationVocabulary/> ,
+		<https://www.omg.org/spec/Commons/DatesAndTimes/>
+		;
+	owl:versionIRI <https://www.omg.org/spec/Commons/20220501/MappingDatesAndTimesToOWLTime/> ;
+	cmns-av:copyright
+		"Copyright (c) 2021-2022 Thematix Partners LLC" ,
+		"Copyright (c) 2022 Object Management Group, Inc."
+		;
+	.
+
+time:hasXSDDuration
+	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf cmns-dt:hasDurationValue ;
+	.
+
+time:inXSDDate
+	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf cmns-dt:hasDateValue ;
+	.
+
+time:inXSDDateTimeStamp
+	a owl:DatatypeProperty ;
+	rdfs:subPropertyOf cmns-dt:hasDateTimeStampValue ;
+	.
+
+cmns-dt:Duration
+	a owl:Class ;
+	owl:equivalentClass time:TemporalDuration ;
+	.
+
+cmns-dt:ExplicitDate
+	a owl:Class ;
+	rdfs:subClassOf
+		time:GeneralDateTimeDescription ,
+		[
+			a owl:Restriction ;
+			owl:onProperty time:day ;
+			owl:cardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty time:month ;
+			owl:cardinality "1"^^xsd:nonNegativeInteger ;
+		] ,
+		[
+			a owl:Restriction ;
+			owl:onProperty time:year ;
+			owl:cardinality "1"^^xsd:nonNegativeInteger ;
+		]
+		;
+	.
+
+cmns-dt:ProperInterval
+	a owl:Class ;
+	owl:equivalentClass time:ProperInterval ;
+	.
+
+cmns-dt:TemporalEntity
+	a owl:Class ;
+	owl:equivalentClass time:TemporalEntity ;
+	.
+
+cmns-dt:TimeInstant
+	a owl:Class ;
+	owl:equivalentClass time:Instant ;
+	.
+
+cmns-dt:TimeInterval
+	a owl:Class ;
+	owl:equivalentClass time:Interval ;
+	.
+

@@ -1,0 +1,33 @@
+test_auth_stripped_on_cross_host_redirect (test_downloader.Tests.test_auth_stripped_on_cross_host_redirect) ... ok
+test_block_page_not_document (test_downloader.Tests.test_block_page_not_document) ... ok
+test_budget (test_downloader.Tests.test_budget) ... ok
+test_catalog_integrity (test_downloader.Tests.test_catalog_integrity) ... ok
+test_content_length_mismatch (test_downloader.Tests.test_content_length_mismatch) ... ok
+test_corrupt_cached_file_is_retrieved (test_downloader.Tests.test_corrupt_cached_file_is_retrieved) ... ok
+test_discovery_limit_reports_partial (test_downloader.Tests.test_discovery_limit_reports_partial) ... ok
+test_discovery_retry_clears_stale_partial (test_downloader.Tests.test_discovery_retry_clears_stale_partial) ... ok
+test_empty_rejected (test_downloader.Tests.test_empty_rejected) ... ok
+test_filename (test_downloader.Tests.test_filename) ... ok
+test_github_pin_resolution (test_downloader.Tests.test_github_pin_resolution) ... ok
+test_html_not_ontology (test_downloader.Tests.test_html_not_ontology) ... ok
+test_invalid_download_not_registered (test_downloader.Tests.test_invalid_download_not_registered) ... ok
+test_json_syntax (test_downloader.Tests.test_json_syntax) ... ok
+test_manual_gate (test_downloader.Tests.test_manual_gate) ... ok
+test_max_size (test_downloader.Tests.test_max_size) ... ok
+test_mock_download_and_reuse (test_downloader.Tests.test_mock_download_and_reuse) ... ok
+test_obo_signature (test_downloader.Tests.test_obo_signature) ... ok
+test_optional_gates (test_downloader.Tests.test_optional_gates) ... ok
+test_pack_checksums_and_exclusions (test_downloader.Tests.test_pack_checksums_and_exclusions) ... ok
+test_selection_validation (test_downloader.Tests.test_selection_validation) ... ok
+test_turtle_signature (test_downloader.Tests.test_turtle_signature) ... ok
+test_url_security (test_downloader.Tests.test_url_security) ... ok
+test_verify_hash_mismatch (test_downloader.Tests.test_verify_hash_mismatch) ... ok
+test_xml_root (test_downloader.Tests.test_xml_root) ... ok
+test_zip_existing_symlink_escape (test_downloader.Tests.test_zip_existing_symlink_escape) ... ok
+test_zip_extract (test_downloader.Tests.test_zip_extract) ... ok
+test_zip_path_safety (test_downloader.Tests.test_zip_path_safety) ... ok
+
+----------------------------------------------------------------------
+Ran 28 tests in 0.206s
+
+OK

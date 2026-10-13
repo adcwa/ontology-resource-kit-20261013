@@ -1,0 +1,5 @@
+{
+  "original_files_included": 0,
+  "status": "catalog_and_downloader_only",
+  "note": "当前制作环境外网文件下载失败；没有将上游文件伪装为已下载。开放资源需在本地运行 download.py；手动或待核验项保留明确状态。"
+}

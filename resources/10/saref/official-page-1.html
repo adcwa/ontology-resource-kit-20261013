@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en-GB" dir="ltr">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="generator" content="saref-pypeline">
+    <title>SAREF Portal</title>
+    <link rel="stylesheet" href="/files/bundle.min.css">
+</head>
+
+<body>
+    <nav id="siteNav" class="navbar navbar-expand-lg navbar-light bg-white py-3">
+        <div class="container d-flex justify-content-between">
+            <div class="navbar-brand">
+                <a href="https://www.etsi.org/" title="ETSI home">
+                    <img src="/files/images/etsi.svg" alt="ETSI logo">
+                </a>
+            </div>
+            <div class="navbar-brand">
+                <a class="d-lg-none saref-text" href="https://saref.etsi.org/" rel="home">SAREF</a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item d-none d-lg-inline">
+                        <a class="nav-link saref-text" href="/index.html">SAREF</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/core/">Core</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Extensions</a>
+                        <ul class="dropdown-menu">
+                          <li>
+                            <a class="dropdown-item nav-link" href="/saref4agri/">SAREF4AGRI</a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item nav-link" href="/saref4auto/">SAREF4AUTO</a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item nav-link" href="/saref4bldg/">SAREF4BLDG</a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item nav-link" href="/saref4city/">SAREF4CITY</a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item nav-link" href="/saref4dmgt/">SAREF4DMGT</a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item nav-link" href="/saref4ehaw/">SAREF4EHAW</a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item nav-link" href="/saref4ener/">SAREF4ENER</a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item nav-link" href="/saref4envi/">SAREF4ENVI</a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item nav-link" href="/saref4grid/">SAREF4GRID</a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item nav-link" href="/saref4inma/">SAREF4INMA</a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item nav-link" href="/saref4lift/">SAREF4LIFT</a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item nav-link" href="/saref4mari/">SAREF4MARI</a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item nav-link" href="/saref4syst/">SAREF4SYST</a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item nav-link" href="/saref4watr/">SAREF4WATR</a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item nav-link" href="/saref4wear/">SAREF4WEAR</a>
+                          </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <div class="d-flex align-items-center ms-auto">
+                    <input class="form-control form-control-sm me-2"
+                        id="search-box"
+                        type="search"
+                        placeholder="🔍 ex., device"
+                        data-bs-toggle="modal"
+                        data-bs-target="#searchModal"
+                        readonly>
+                    <div id="social" class="d-flex">
+                        <a href="https://www.facebook.com/etsi.standards" target="_blank" aria-label="ETSI Standards on Facebook">
+                            <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/etsi?trk=biz-companies-cym" target="_blank" aria-label="ETSI Standards on LinkedIn">
+                            <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.youtube.com/user/ETSIstandards" target="_blank" aria-label="ETSI Standards on Youtube">
+                            <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="searchModalLabel">Search SAREF</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <input id="searchInput" class="form-control form-control-lg mb-3" type="search" placeholder="Type to search…" autocomplete="off">
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6>Pages & Sections</h6>
+                            <ul id="pagesResults" class="list-group list-group-flush small"></ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>Important Terms</h6>
+                            <ul id="termsResults" class="list-group list-group-flush small"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header class="text-light py-3 mx-0">
+        <div class="container">
+                        <h1>The Smart Applications REFerence Ontology (<span class="saref-text">SAREF</span>)</h1>
+                        <div id="summary">
+            <p><strong>The Smart Applications REFerence (SAREF)</strong> suite of ontologies forms a shared model of consensus intended to enable semantic interoperability between solutions from different providers and among various activity sectors in the Internet of Things (IoT), thus contributing to the development of data spaces.</p>
+            <p>SAREF is published as a set of open standards produced by <strong>ETSI Technical Committee Data Solutions (<a href="https://www.etsi.org/committee/data">DATA</a>)</strong>.</p>
+            <p>This <strong>ETSI portal for SAREF</strong> exposes the SAREF ontologies and points to the different SAREF-related deliverables.</p>
+            </div>
+        </div>
+    </header>
+
+
+    <main id="pageContent" class="container-md">
+        <div id="content">
+<section class="container" id="saref">
+<h2>The SAREF suite of ontologies</h2>
+<p>SAREF is a suite of individually versionned ontologies that contains <a href="#core"><strong>a core ontology</strong></a>, a set of <a href="#patterns"><strong>reference ontology patterns</strong></a> that provide guidelines on how to use and extend SAREF, and different <a href="#extensions"><strong>extensions</strong></a> for vertical domains.</p>
+<figure class="mx-auto">
+<img alt="SAREF and its extensions" src="files/images/Modules.png" style="width:100%;max-width:1000px;"/>
+<figcaption id="Figure_1">Figure 1: SAREF and its extensions</figcaption>
+</figure>
+<div class="container row">
+<section class="col-xl" id="core">
+<h3>SAREF Core</h3>
+<p><a href="core"><strong>SAREF Core</strong></a> specifies recurring core concepts in the smart applications domain, and the main relationships between these concepts. The figure below provides an overview of SAREF Core.</p>
+<figure>
+<a href="core"><img alt="Overview of SAREF Core" src="files/images/Overview_canonical.png" style="width:100%;max-width:800px;"/></a>
+<figcaption id="Figure_2">Figure 2: Overview of SAREF Core</figcaption>
+</figure>
+</section>
+<section class="col-xl" id="extensions">
+<h3>SAREF Extensions</h3>
+<p>Different extensions were developed for distinct vertical domains. Each domain can have one or more extensions, depending on the complexity of the domain and the different needs:</p>
+<ul>
+<li><a href="saref4ener/"><strong>SAREF4ENER</strong></a>: SAREF extension for the Energy domain</li>
+<li><a href="saref4envi/"><strong>SAREF4ENVI</strong></a>: SAREF extension for the Environment Domain</li>
+<li><a href="saref4bldg/"><strong>SAREF4BLDG</strong></a>: SAREF extension for the Building domain</li>
+<li><a href="saref4city/"><strong>SAREF4CITY</strong></a>: SAREF extension for the Smart Cities domain</li>
+<li><a href="saref4inma/"><strong>SAREF4INMA</strong></a>: SAREF extension for the Industry and Manufacturing domains</li>
+<li><a href="saref4agri/"><strong>SAREF4AGRI</strong></a>: SAREF extension for the Smart Agriculture and Food Chain domains</li>
+<li><a href="saref4auto/"><strong>SAREF4AUTO</strong></a>: SAREF extension for the Automotive domain</li>
+<li><a href="saref4ehaw/"><strong>SAREF4EHAW</strong></a>: SAREF extension for the eHealth/Ageinwell domain
+                    </li>
+<li><a href="saref4wear/"><strong>SAREF4WEAR</strong></a>: SAREF extension for the Wearables domain</li>
+<li><a href="saref4watr/"><strong>SAREF4WATR</strong></a>: SAREF extension for the Water domain</li>
+<li><a href="saref4lift/"><strong>SAREF4LIFT</strong></a>: SAREF extension for the Smart Lifts domain</li>
+<li><a href="saref4grid/"><strong>SAREF4GRID</strong></a>: SAREF extension for the Smart Grid domain</li>
+</ul>
+</section>
+</div>
+<section class="row" id="patterns">
+<h3>SAREF Reference ontology patterns</h3>
+<p><a href="patterns/"><strong>Reference ontology patterns</strong></a> provide guidelines on how to use and extend SAREF, to describe any kind of applications-related data/information/systems in different verticals. Their aim is to help ensuring a homogeneous structure of the overall SAREF ontology, to speed up the development of extensions, and to improve semantic interoperability.</p>
+<p>SAREF4SYST consists both of a <a href="saref4syst">core ontology</a>, and <a href="patterns#saref4syst">guidelines</a> to create ontologies following the SAREF4SYST ontology patterns. The core ontology is a lightweight OWL-DL ontology that defines 3 classes and 9 object properties.</p>
+</section>
+</section>
+<section class="container">
+<h2>Developement of SAREF</h2>
+<div class="row">
+<div class="col-lg">
+<section>
+<h3 id="history">History of SAREF</h3>
+<p>The SAREF initiative started in 2014/2015 with a study requested by the European Commission, and continues in the <strong>ETSI Technical Committee Data Solutions
+                            (<a href="https://www.etsi.org/committee/data">DATA</a>)</strong>.</p>
+<p><a href="history.html">(more...)</a></p>
+</section>
+<section>
+<h3 id="development">SAREF Development Framework and Workflow</h3>
+<p>While the SAREF ontologies are available and documented on this public portal, their development is led by ETSI members on the <a href="https://saref.etsi.org/sources/">ETSI Labs</a> in conformance with <a href="https://www.etsi.org/deliver/etsi_ts/103600_103699/103673/">ETSI TS 103 673</a>.</p>
+<p>Non-ETSI members should soon be able to create an account to provide comments and suggestions via issues, or contribute to individual SAREF ontologies.</p>
+<p><a href="development.html">(more...)</a></p>
+</section>
+</div>
+<section class="col-lg" id="design_principles">
+<h3>SAREF Design Principles</h3>
+<p>SAREF is developed based on <a href="principles.html">the following fundamental principles</a>:</p>
+<ul>
+<li><strong>Reuse and alignment</strong> of concepts and relationships that are defined in existing assets</li>
+<li><strong>Modularity</strong> to allow separation and recombination of different parts depending on specific needs</li>
+<li><strong>Extensibility</strong> to allow further growth of the ontology</li>
+<li><strong>Maintainability</strong> to facilitate the process of identifying and correcting defects,
+                        accommodate new requirements, and cope with changes</li>
+<li><strong>Generic versus specific entity distinction</strong>. SAREF is designed for application developers, and also for online catalogue and taxonomy editors.</li>
+</ul>
+<p><a href="principles.html">(more...)</a></p>
+</section>
+</div>
+</section>
+<section class="container">
+<h2>Publications</h2>
+<blockquote>
+<em>(to cite versions after V3.1.1)</em> García‐Castro, R., Lefrançois, M., Poveda‐Villalón, M., &amp; Daniele, L. (2023). The ETSI SAREF ontology for smart applications: a long path of development and evolution. Energy Smart Appliances: Applications, Methodologies, and Challenges, 183-215. (<a href="files/bib/garcia2023etsi.bib">.bib</a>)
+        </blockquote>
+<blockquote>
+<em>(to cite V1.1.1)</em> Daniele, L., den Hartog, F., &amp; Roes, J. (2015). Created in close interaction with the industry: the smart appliances reference (SAREF) ontology. In Formal Ontologies Meet Industry: 7th International Workshop, FOMI 2015, Berlin, Germany, August 5, 2015, Proceedings 7 (pp. 100-112). Springer International Publishing. (<a href="files/bib/daniele2015created.bib">.bib</a>)
+        </blockquote>
+</section>
+</div>
+    </main>
+
+
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="news-2024-10" class="toast border-0 mb-3" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header bg-primary text-light">
+                <strong class="me-auto">SAREF is a European Norm!</strong>
+                <small>2024-10</small>
+                <!-- <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button> -->
+            </div>
+            <div class="toast-body">
+                <p>ETSI EN 303 760 provides guidance for developing IoT smart applications and products that are interoperable at the semantic level using the SAREF framework. It details how to apply SAREF, outlines a methodology to demonstrate compliance, and describes optional steps for contributing to a new SAREF extension.</p>
+                <p><small><a href="https://www.etsi.org/deliver/etsi_en/303700_303799/303760/">ETSI EN 303 760</a>: "SmartM2M; SAREF Guidelines for IoT Semantic Interoperability; Develop, apply and evolve Smart Applications ontologies".</small></p>
+                <div class="mt-2 pt-2 border-top  d-flex justify-content-end">
+                    <button type="button" class="btn btn-primary text-light btn-sm" data-bs-dismiss="toast">Dismiss</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="news-2025-09" class="toast border-0 mb-3" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header bg-primary text-light">
+                <strong class="me-auto">New SAREF Website Launched!</strong>
+                <small>2025-09</small>
+                <!-- <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button> -->
+            </div>
+            <div class="toast-body">
+                <p>The SAREF website has been fully redesigned with a modern look, improved ontology browsing, and site-wide term-based search to enhance navigation and usability.</p>
+                <p><small>StandICT.eu 2026 grant: "Improving the ETSI TC SmartM2M SAREF publication framework and workflow"</small></p>
+                <div class="mt-2 pt-2 border-top  d-flex justify-content-end">
+                    <button type="button" class="btn btn-primary text-light btn-sm" data-bs-dismiss="toast">Dismiss</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="news-2026-03" class="toast border-0 mb-3" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header bg-primary text-light">
+                <strong class="me-auto">SAREF has a new home!</strong>
+                <small>2025-09</small>
+                <!-- <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button> -->
+            </div>
+            <div class="toast-body">
+                <p>The SAREF development and maintenance activities were transferred to the new ETSI Technical Committee Data Solutions (<a href="https://www.etsi.org/committee/data">DATA</a>)</p>
+                <div class="mt-2 pt-2 border-top  d-flex justify-content-end">
+                    <button type="button" class="btn btn-primary text-light btn-sm" data-bs-dismiss="toast">Dismiss</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+<footer class="bg-dark text-light container-fluid">
+        <div class="row align-items-top py-1">
+
+            <!-- Logo -->
+            <div class="col-md-2 text-start text-md-center py-1">
+                <a href="https://www.etsi.org/" title="Visit ETSI">
+                    <img src="https://forge.etsi.org/files/ETSI-Logo_BW_S_Office1.png" alt="ETSI Logo" class="img-fluid" style="max-height:40px;">
+                </a>
+            </div>
+
+            <!-- Text -->
+            <div class="col-md-3 text-start text-md-center py-1">
+                © ETSI 2026 <br>
+                <a href="https://www.etsi.org/" class="small text-white">
+                    Visit ETSI website for more information on Terms &amp; Conditions.
+                </a>
+            </div>
+
+            <!-- Navigation -->
+            <div class="col-md-5 text-end text-md-center py-1">
+                <nav class="nav">
+                    <a class="nav-link text-light mx-2 p-0" href="https://forge.etsi.org/index.php/legal-matters">
+                        Legal matters
+                    </a>
+                    <a class="nav-link text-light mx-2 p-0" href="mailto:cti_support@etsi.org?subject=[SAREF]">
+                        Contact &amp; Support
+                    </a>
+                </nav>
+            </div>
+
+            <!-- Back to top -->
+            <div class="col-md-2 text-end text-md-center py-1">
+                <a href="#" id="back-to-top" class="text-light">
+                    Back to top <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script src="/files/bundle.min.js"></script>
+</body>
+
+</html>
